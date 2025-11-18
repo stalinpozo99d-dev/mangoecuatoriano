@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruta El Dorado – Exportación de mango ecuatoriano</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      color: #333;
+      background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+      overflow-x: hidden;
+    }
+    
+    /* Header & Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      font-weight: 800;
+      font-size: 1.8rem;
+      background: linear-gradient(45deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .logo i {
+      font-size: 2rem;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+    
+    nav a:hover {
+      color: #F7931E;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #FF6B35, #F7931E);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    .btn-nav {
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(45deg, #FF6B35, #F7931E);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(247, 147, 30, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(247, 147, 30, 0.4);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #FFD166 0%, #FF9A3D 100%);
+      padding: 150px 20px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      animation: rotate 20s linear infinite;
+    }
+    
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-text h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #8A4B0E;
+      line-height: 1.2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hero-text h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #6B3A0E;
+      font-weight: 600;
+    }
+    
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #5D3415;
+      line-height: 1.6;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primario,
+    .btn-secundario {
+      border-radius: 30px;
+      padding: 14px 28px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn-primario {
+      background: linear-gradient(45deg, #8A4B0E, #6B3A0E);
+      color: white;
+    }
+    
+    .btn-primario:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(138, 75, 14, 0.4);
+    }
+    
+    .btn-secundario {
+      background: white;
+      color: #8A4B0E;
+      border: 3px solid #8A4B0E;
+    }
+    
+    .btn-secundario:hover {
+      background: #FFF4E6;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(138, 75, 14, 0.2);
+    }
+    
+    .hero-image {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: transform 0.5s ease;
+    }
+    
+    .hero-image:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    
+    .hero-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .hero-image p {
+      font-size: 1.1rem;
+      color: #6B3A0E;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+    
+    /* Secciones generales */
+    section {
+      padding: 100px 20px;
+    }
+    
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h2.section-title {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #8A4B0E;
+      text-align: center;
+      position: relative;
+    }
+    
+    h2.section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, #FF6B35, #F7931E);
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 50px;
+      color: #6B3A0E;
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    /* Quiénes somos */
+    #nosotros {
+      background: linear-gradient(135deg, #FFF9E6 0%, #FFF 100%);
+    }
+    
+    .grid-two {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      align-items: stretch;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255,255,255,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #FF6B35, #F7931E);
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #8A4B0E;
+    }
+    
+    .card p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #5D3415;
+    }
+    
+    /* Productos */
+    #productos {
+      background: linear-gradient(135deg, #FFF 0%, #FFF9E6 100%);
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    
+    .product-card {
+      text-align: center;
+      position: relative;
+    }
+    
+    .product-card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .product-card:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    
+    .product-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      color: #8A4B0E;
+    }
+    
+    .product-card p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      color: #5D3415;
+    }
+    
+    .product-card .btn-primario {
+      margin-top: 20px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Proceso */
+    #proceso {
+      background: linear-gradient(135deg, #FFF9E6 0%, #FFF 100%);
+    }
+    
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    
+    .step-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .step-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .step-number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #FF6B35, #F7931E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: white;
+      margin: 0 auto 20px;
+      box-shadow: 0 5px 15px rgba(247, 147, 30, 0.4);
+    }
+    
+    .step-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #8A4B0E;
+    }
+    
+    .step-card p {
+      font-size: 1rem;
+      color: #5D3415;
+      line-height: 1.6;
+    }
+    
+    /* Beneficios */
+    #beneficios {
+      background: linear-gradient(135deg, #FFF 0%, #FFF9E6 100%);
+    }
+    
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    
+    .benefit-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .benefit-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(45deg, #FF6B35, #F7931E);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .benefit-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #8A4B0E;
+    }
+    
+    .benefit-card p {
+      font-size: 1rem;
+      color: #5D3415;
+      line-height: 1.6;
+    }
+    
+    /* Equipo */
+    #equipo {
+      background: linear-gradient(135deg, #FFF9E6 0%, #FFF 100%);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+    
+    .team-member {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .team-member img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .member-info {
+      padding: 25px;
+      text-align: center;
+    }
+    
+    .member-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #8A4B0E;
+    }
+    
+    .member-info p.position {
+      font-weight: 700;
+      color: #F7931E;
+      margin-bottom: 15px;
+    }
+    
+    .member-info p.bio {
+      font-size: 0.95rem;
+      color: #5D3415;
+      line-height: 1.6;
+    }
+    
+    /* Contacto */
+    #contacto {
+      background: linear-gradient(135deg, #FFF 0%, #FFF9E6 100%);
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    
+    .contact-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #8A4B0E;
+    }
+    
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .contact-icon {
+      font-size: 1.5rem;
+      color: #F7931E;
+      min-width: 40px;
+    }
+    
+    .contact-text h4 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #6B3A0E;
+    }
+    
+    .contact-text p {
+      font-size: 1rem;
+      color: #5D3415;
+      line-height: 1.5;
+    }
+    
+    .contact-form {
+      background: white;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    
+    .contact-form h3 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: #8A4B0E;
+      text-align: center;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #6B3A0E;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #EDEDED;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #F7931E;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(247, 147, 30, 0.2);
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(45deg, #8A4B0E, #6B3A0E);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(138, 75, 14, 0.3);
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(138, 75, 14, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #8A4B0E 0%, #6B3A0E 100%);
+      color: #FFF9E6;
+      padding: 60px 20px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+      color: #FFD166;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #FFD166;
+      border-radius: 2px;
+    }
+    
+    .footer-column p {
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #FFF9E6;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+      color: #FFF9E6;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .footer-links a:hover {
+      color: #FFD166;
+      transform: translateX(5px);
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: #FFD166;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+      background: #FFD166;
+      color: #8A4B0E;
+      transform: translateY(-5px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 40px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #FFF9E6;
+      grid-column: 1 / -1;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-text h2 {
+        font-size: 1.5rem;
+      }
+      
+      .hero-text p {
+        font-size: 1rem;
+      }
+      
+      h2.section-title {
+        font-size: 2.2rem;
+      }
+      
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-crown"></i>
+        RUTA EL DORADO
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="#nosotros"><i class="fas fa-users"></i> Nosotros</a></li>
+          <li><a href="#productos"><i class="fas fa-apple-alt"></i> Productos</a></li>
+          <li><a href="#proceso"><i class="fas fa-sync-alt"></i> Proceso</a></li>
+          <li><a href="#beneficios"><i class="fas fa-star"></i> Beneficios</a></li>
+          <li><a href="#equipo"><i class="fas fa-user-friends"></i> Equipo</a></li>
+          <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+      </nav>
+      <button class="btn-nav" onclick="location.href='#contacto'"><i class="fas fa-phone"></i> Llamar ahora</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Exportamos el Mejor Mango Ecuatoriano al Mundo</h1>
+        <h2>Ruta El Dorado - Calidad y Sabor Tropical</h2>
+        <p>Somos una empresa especializada en la exportación de mango ecuatoriano de primera calidad, llevando el sabor tropical a mercados internacionales con procesos sostenibles y certificados.</p>
+        <div class="hero-buttons">
+          <button class="btn-primario" onclick="location.href='#productos'"><i class="fas fa-eye"></i> Ver productos</button>
+          <button class="btn-secundario" onclick="location.href='#contacto'"><i class="fas fa-phone"></i> Contáctanos</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1603052875384-15bcd4ea15ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Mango ecuatoriano de alta calidad">
+        <p><i class="fas fa-leaf"></i> Mango ecuatoriano cultivado en las mejores regiones del país</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nosotros Section -->
+  <section id="nosotros">
+    <div class="section-inner">
+      <h2 class="section-title">Quiénes Somos</h2>
+      <p class="section-subtitle">Conoce nuestra historia y compromiso con la excelencia</p>
+      
+      <div class="grid-two">
+        <div class="card">
+          <h3><i class="fas fa-history"></i> Nuestra Historia</h3>
+          <p>Fundada en 2010, Ruta El Dorado nació con la visión de posicionar al mango ecuatoriano como uno de los mejores frutos tropicales del mundo. Desde entonces, hemos crecido hasta convertirnos en un referente en exportación de mango premium.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-bullseye"></i> Nuestra Misión</h3>
+          <p>Promover el consumo del mango ecuatoriano en mercados internacionales, garantizando la más alta calidad, sostenibilidad ambiental y bienestar para nuestros productores locales.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-eye"></i> Visión</h3>
+          <p>Ser reconocidos mundialmente como la principal exportadora de mango ecuatoriano, contribuyendo al desarrollo económico de las comunidades agrícolas y estableciendo estándares de excelencia en el sector.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-heart"></i> Valores</h3>
+          <p>Calidad, Sostenibilidad, Responsabilidad Social, Innovación y Compromiso con nuestros clientes y productores.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos Section -->
+  <section id="productos">
+    <div class="section-inner">
+      <h2 class="section-title">Nuestros Productos</h2>
+      <p class="section-subtitle">Variedades de mango ecuatoriano de exportación</p>
+      
+      <div class="product-grid">
+        <div class="product-card card">
+          <img src="https://images.unsplash.com/photo-1603052875384-15bcd4ea15ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Mango Ataulfo">
+          <h3>Mango Ataulfo</h3>
+          <p><strong>Características:</strong> Pulpa muy dulce, fibra mínima, cáscara amarilla brillante</p>
+          <p><strong>Disponibilidad:</strong> Enero a marzo</p>
+          <p><strong>Presentación:</strong> 4-6 kg por caja</p>
+          <button class="btn-primario" onclick="location.href='#contacto'"><i class="fas fa-info-circle"></i> Solicitar información</button>
+        </div>
+        
+        <div class="product-card card">
+          <img src="https://images.unsplash.com/photo-1594783012281-00a6d9e17d1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Mango Tommy">
+          <h3>Mango Tommy Atkins</h3>
+          <p><strong>Características:</strong> Firme, piel rojiza, pulpa jugosa y ligeramente fibrosa</p>
+          <p><strong>Disponibilidad:</strong> Marzo a mayo</p>
+          <p><strong>Presentación:</strong> 5-7 kg por caja</p>
+          <button class="btn-primario" onclick="location.href='#contacto'"><i class="fas fa-info-circle"></i> Solicitar información</button>
+        </div>
+        
+        <div class="product-card card">
+          <img src="https://images.unsplash.com/photo-1603052875384-15bcd4ea15ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Mango Haden">
+          <h3>Mango Haden</h3>
+          <p><strong>Características:</strong> Aroma intenso, pulpa naranja-rojiza, semilla pequeña</p>
+          <p><strong>Disponibilidad:</strong> Febrero a abril</p>
+          <p><strong>Presentación:</strong> 3-5 kg por caja</p>
+          <button class="btn-primario" onclick="location.href='#contacto'"><i class="fas fa-info-circle"></i> Solicitar información</button>
+        </div>
+        
+        <div class="product-card card">
+          <img src="https://images.unsplash.com/photo-1594783012281-00a6d9e17d1c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Mango Kent">
+          <h3>Mango Kent</h3>
+          <p><strong>Características:</strong> Alta producción, excelente sabor, resistente al transporte</p>
+          <p><strong>Disponibilidad:</strong> Abril a junio</p>
+          <p><strong>Presentación:</strong> 6-8 kg por caja</p>
+          <button class="btn-primario" onclick="location.href='#contacto'"><i class="fas fa-info-circle"></i> Solicitar información</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso Section -->
+  <section id="proceso">
+    <div class="section-inner">
+      <h2 class="section-title">Nuestro Proceso</h2>
+      <p class="section-subtitle">Desde la huerta hasta su mesa</p>
+      
+      <div class="steps">
+        <div class="step-card card">
+          <div class="step-number">1</div>
+          <h3>Cultivo Sostenible</h3>
+          <p>Nuestros mangos se cultivan en fincas certificadas con prácticas sostenibles que respetan el medio ambiente y promueven la biodiversidad.</p>
+        </div>
+        
+        <div class="step-card card">
+          <div class="step-number">2</div>
+          <h3>Selección Rigurosa</h3>
+          <p>Cada fruto es seleccionado manualmente por expertos para garantizar que cumple con nuestros estrictos estándares de calidad.</p>
+        </div>
+        
+        <div class="step-card card">
+          <div class="step-number">3</div>
+          <h3>Empaque Certificado</h3>
+          <p>Procesamiento en instalaciones certificadas ISO, cumpliendo con normas sanitarias internacionales y trazabilidad completa.</p>
+        </div>
+        
+        <div class="step-card card">
+          <div class="step-number">4</div>
+          <h3>Exportación Global</h3>
+          <p>Distribución eficiente a través de rutas logísticas optimizadas hacia Europa, Estados Unidos, Asia y América Latina.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios Section -->
+  <section id="beneficios">
+    <div class="section-inner">
+      <h2 class="section-title">Beneficios Competitivos</h2>
+      <p class="section-subtitle">Por qué elegir nuestros mangos ecuatorianos</p>
+      
+      <div class="benefits">
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <div class="benefit-title">Calidad Premium</div>
+          <p>Frutos seleccionados por expertos con altos estándares de maduración, tamaño y apariencia.</p>
+        </div>
+        
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <div class="benefit-title">Trazabilidad Completa</div>
+          <p>Control total desde la finca hasta el destino final, garantizando seguridad alimentaria.</p>
+        </div>
+        
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="benefit-title">Certificaciones Internacionales</div>
+          <p>Certificación GlobalGAP, SENASA, USDA Organic y otras normativas exigidas por cada mercado.</p>
+        </div>
+        
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <div class="benefit-title">Logística Eficiente</div>
+          <p>Cadena de frío controlada y tiempos de entrega optimizados para mantener la frescura.</p>
+        </div>
+        
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <i class="fas fa-seedling"></i>
+          </div>
+          <div class="benefit-title">Sostenibilidad Ambiental</div>
+          <p>Prácticas agrícolas responsables que protegen el medio ambiente y promueven la biodiversidad.</p>
+        </div>
+        
+        <div class="benefit-card card">
+          <div class="benefit-icon">
+            <i class="fas fa-headset"></i>
+          </div>
+          <div class="benefit-title">Soporte Personalizado</div>
+          <p>Asesoría técnica continua, muestras gratuitas y soluciones adaptadas a sus necesidades específicas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipo Section -->
+  <section id="equipo">
+    <div class="section-inner">
+      <h2 class="section-title">Nuestro Equipo</h2>
+      <p class="section-subtitle">Profesionales comprometidos con la excelencia</p>
+      
+      <div class="team-grid">
+        <div class="team-member card">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Erik Pozo">
+          <div class="member-info">
+            <h3>Erik Pozo</h3>
+            <p class="position">Proveedor</p>
+            <p class="bio">26 años, encargado de la selección y abastecimiento de los mejores mangos para exportación.</p>
+          </div>
+        </div>
+        
+        <div class="team-member card">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Milena Tayan">
+          <div class="member-info">
+            <h3>Milena Tayan</h3>
+            <p class="position">Directora General</p>
+            <p class="bio">25 años, lidera la visión estratégica de la empresa con pasión por la excelencia.</p>
+          </div>
+        </div>
+        
+        <div class="team-member card">
+          <img src="https://images.unsplash.com/photo-1573497491765-dccce0a62d0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Nicol Taques">
+          <div class="member-info">
+            <h3>Nicol Taques</h3>
+            <p class="position">Jefa de Control de Calidad</p>
+            <p class="bio">23 años, ingeniera agrónoma especializada en garantizar la máxima calidad de nuestros productos.</p>
+          </div>
+        </div>
+        
+        <div class="team-member card">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400&q=80" alt="Alison Chapi">
+          <div class="member-info">
+            <h3>Alison Chapi</h3>
+            <p class="position">Gerente Comercial y Logístico</p>
+            <p class="bio">29 años, experta en logística internacional y desarrollo de mercados comerciales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto Section -->
+  <section id="contacto">
+    <div class="section-inner">
+      <h2 class="section-title">Contáctanos</h2>
+      <p class="section-subtitle">Estamos listos para atender tus necesidades de mango ecuatoriano</p>
+      
+      <div class="contact-grid">
+        <div class="contact-info card">
+          <h3><i class="fas fa-address-book"></i> Información de Contacto</h3>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Dirección</h4>
+              <p>Av. Amazonas N45-67, Quito, Ecuador</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Teléfono</h4>
+              <p>+593 2 555 1234</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>info@rutaeldorado.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Horario</h4>
+              <p>Lunes a Viernes, 8:00 - 17:00</p>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="contact-text">
+              <h4>Nuestras Oficinas</h4>
+              <p><strong>Quito:</strong> Matriz corporativa<br>
+                 <strong>Guayaquil:</strong> Centro de distribución<br>
+                 <strong>Miami:</strong> Oficina comercial USA<br>
+                 <strong>Rotterdam:</strong> Oficina Europa</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form card">
+          <h3><i class="fas fa-file-contract"></i> Solicita una Cotización</h3>
+          <form>
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Nombre completo</label>
+              <input type="text" id="name" placeholder="Ingresa tu nombre completo" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
+              <input type="email" id="email" placeholder="Ingresa tu correo electrónico" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone"><i class="fas fa-phone"></i> Teléfono</label>
+              <input type="tel" id="phone" placeholder="Ingresa tu número de teléfono">
+            </div>
+            
+            <div class="form-group">
+              <label for="product"><i class="fas fa-apple-alt"></i> Producto de interés</label>
+              <select id="product" required>
+                <option value="">Selecciona un producto</option>
+                <option value="ataulfo">Mango Ataulfo</option>
+                <option value="tommy">Mango Tommy Atkins</option>
+                <option value="haden">Mango Haden</option>
+                <option value="kent">Mango Kent</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="quantity"><i class="fas fa-weight"></i> Cantidad requerida (kg)</label>
+              <input type="number" id="quantity" placeholder="Ingresa la cantidad en kilogramos" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message"><i class="fas fa-comment"></i> Mensaje adicional</label>
+              <textarea id="message" placeholder="Déjanos cualquier comentario o pregunta"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Enviar solicitud</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-column">
+        <h3><i class="fas fa-crown"></i> RUTA EL DORADO</h3>
+        <p>Exportando el mejor mango ecuatoriano al mundo con calidad, sostenibilidad y pasión por la excelencia.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3><i class="fas fa-link"></i> Enlaces Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+          <li><a href="#nosotros"><i class="fas fa-chevron-right"></i> Nosotros</a></li>
+          <li><a href="#productos"><i class="fas fa-chevron-right"></i> Productos</a></li>
+          <li><a href="#proceso"><i class="fas fa-chevron-right"></i> Proceso</a></li>
+          <li><a href="#contacto"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3><i class="fas fa-apple-alt"></i> Productos</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Mango Ataulfo</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Mango Tommy Atkins</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Mango Haden</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Mango Kent</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Mango Francis</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3><i class="fas fa-globe-americas"></i> Mercados</h3>
+        <ul class="footer-links">
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Europa</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Estados Unidos</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Asia</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> América Latina</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Oriente Medio</a></li>
+        </ul>
+      </div>
+      
+      <div class="copyright">
+        &copy; 2023 Ruta El Dorado. Todos los derechos reservados. | Diseñado con <i class="fas fa-heart" style="color: #FF6B35;"></i> para el mundo
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
